@@ -8213,6 +8213,7 @@ hs	crates/icon/extension_map.json	/^  "hs": "\\ue61f",$/;"	s
 htm	crates/icon/extension_map.json	/^  "htm": "\\ue60e",$/;"	s
 html	crates/icon/extension_map.json	/^  "html": "\\ue60e",$/;"	s
 hunk_cb	target/release/build/libgit2-sys-d81f40021236eeeb/out/include/git2/apply.h	/^	git_apply_hunk_cb hunk_cb;$/;"	m	struct:__anon0ad439100208	typeref:typename:git_apply_hunk_cb
+i	ftplugin/clap_input.vim	/^nnoremap <silent> <buffer> i :<c-u>call clap#navigation#linewise('up')<CR>$/;"	m
 ico	crates/icon/extension_map.json	/^  "ico": "\\ue60d",$/;"	s
 icon_for	crates/icon/src/lib.rs	/^fn icon_for(line: &str) -> Icon {$/;"	f
 icon_for_filer	crates/icon/src/lib.rs	/^pub fn icon_for_filer(path: &Path) -> Icon {$/;"	f
@@ -8280,7 +8281,6 @@ is_git_repo	crates/utility/src/lib.rs	/^pub fn is_git_repo(dir: &Path) -> bool {
 is_nvim	crates/stdio_server/src/types.rs	/^    pub is_nvim: bool,$/;"	m	struct:GlobalEnv
 is_running	crates/stdio_server/src/session/context.rs	/^    pub is_running: Arc<Mutex<AtomicBool>>,$/;"	m	struct:SessionContext
 is_running	crates/stdio_server/src/session/mod.rs	/^    pub fn is_running(&self) -> bool {$/;"	P	implementation:Session
-j	ftplugin/clap_input.vim	/^nnoremap <silent> <buffer> j :<c-u>call clap#navigation#linewise('down')<CR>$/;"	m
 java	crates/icon/extension_map.json	/^  "java": "\\ue738",$/;"	s
 jl	crates/icon/extension_map.json	/^  "jl": "\\ue624",$/;"	s
 joined_tuples	crates/icon/update_constants.py	/^    joined_tuples = ','.join($/;"	v
@@ -8289,7 +8289,7 @@ jpg	crates/icon/extension_map.json	/^  "jpg": "\\ue60d",$/;"	s
 js	crates/icon/extension_map.json	/^  "js": "\\ue60c",$/;"	s
 json	crates/icon/extension_map.json	/^  "json": "\\ue60b",$/;"	s
 jsx	crates/icon/extension_map.json	/^  "jsx": "\\ue7ba",$/;"	s
-k	ftplugin/clap_input.vim	/^nnoremap <silent> <buffer> k :<c-u>call clap#navigation#linewise('up')<CR>$/;"	m
+k	ftplugin/clap_input.vim	/^nnoremap <silent> <buffer> k :<c-u>call clap#navigation#linewise('down')<CR>$/;"	m
 key	target/release/build/libgit2-sys-d81f40021236eeeb/out/include/git2/message.h	/^  const char *key;$/;"	m	struct:__anon5577a52f0108	typeref:typename:const char *
 kind	crates/maple_cli/src/cmd/tags.rs	/^    kind: String,$/;"	m	struct:TagInfo
 klass	target/release/build/libgit2-sys-d81f40021236eeeb/out/include/git2/errors.h	/^	int klass;$/;"	m	struct:__anonb5350aa70208	typeref:typename:int
