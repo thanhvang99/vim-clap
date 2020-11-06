@@ -22,23 +22,12 @@ function! clap#provider#gist#parse_rev(line) abort
   return l:b
 endfunction
 
-function! clap#provider#gist#sink_inner(bang_cmd) abort
-  vertical botright new
-  setlocal buftype=nofile bufhidden=wipe noswapfile nomodeline
-
-  setlocal modifiable
-  silent execute 'read' escape(a:bang_cmd, '%')
-  normal! gg"_dd
-  setfiletype gist
-  setlocal nomodifiable
-endfunction
 
 function! s:gist.sink(line) abort
   let rev = clap#provider#gist#parse_rev(a:line)
-  call clap#provider#gist#sink_inner('!gist -r '. rev)
+  exe "Gist " . rev
 endfunction
 
-" let s:gist.syntax = 'none'
 
 let g:clap#provider#gist# = s:gist
 

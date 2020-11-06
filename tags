@@ -5983,7 +5983,6 @@ clap#provider#files#on_move_impl	autoload/clap/provider/files.vim	/^function! cl
 clap#provider#files#sink_impl	autoload/clap/provider/files.vim	/^function! clap#provider#files#sink_impl(selected) abort$/;"	f
 clap#provider#files#sink_star_impl	autoload/clap/provider/files.vim	/^function! clap#provider#files#sink_star_impl(lines) abort$/;"	f
 clap#provider#gist#parse_rev	autoload/clap/provider/gist.vim	/^function! clap#provider#gist#parse_rev(line) abort$/;"	f
-clap#provider#gist#sink_inner	autoload/clap/provider/gist.vim	/^function! clap#provider#gist#sink_inner(bang_cmd) abort$/;"	f
 clap#provider#gist#source_common	autoload/clap/provider/gist.vim	/^function! clap#provider#gist#source_common(buffer_local) abort$/;"	f
 clap#provider#grep#inject_icon_appended	autoload/clap/provider/grep.vim	/^function! clap#provider#grep#inject_icon_appended(appended) abort$/;"	f
 clap#provider#marks#preview_impl	autoload/clap/provider/marks.vim	/^function! clap#provider#marks#preview_impl(line, col, file_text) abort$/;"	f
