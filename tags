@@ -5985,6 +5985,9 @@ clap#provider#files#sink_star_impl	autoload/clap/provider/files.vim	/^function! 
 clap#provider#gist#parse_rev	autoload/clap/provider/gist.vim	/^function! clap#provider#gist#parse_rev(line) abort$/;"	f
 clap#provider#gist#source_common	autoload/clap/provider/gist.vim	/^function! clap#provider#gist#source_common(buffer_local) abort$/;"	f
 clap#provider#grep#inject_icon_appended	autoload/clap/provider/grep.vim	/^function! clap#provider#grep#inject_icon_appended(appended) abort$/;"	f
+clap#provider#leetcode#parse_rev	autoload/clap/provider/leetcode.vim	/^function! clap#provider#leetcode#parse_rev(line) abort$/;"	f
+clap#provider#leetcode#sink_inner	autoload/clap/provider/leetcode.vim	/^function! clap#provider#leetcode#sink_inner(bang_cmd) abort$/;"	f
+clap#provider#leetcode#source_common	autoload/clap/provider/leetcode.vim	/^function! clap#provider#leetcode#source_common(buffer_local) abort$/;"	f
 clap#provider#marks#preview_impl	autoload/clap/provider/marks.vim	/^function! clap#provider#marks#preview_impl(line, col, file_text) abort$/;"	f
 clap#provider#proj_tags#support_json_format	autoload/clap/provider/proj_tags.vim	/^function! clap#provider#proj_tags#support_json_format() abort$/;"	f
 clap#provider#quickfix#extract_position	autoload/clap/provider/quickfix.vim	/^function! clap#provider#quickfix#extract_position(selected) abort$/;"	f
@@ -7748,6 +7751,7 @@ g:clap#provider#grep2#	autoload/clap/provider/grep2.vim	/^let g:clap#provider#gr
 g:clap#provider#help_tags#	autoload/clap/provider/help_tags.vim	/^let g:clap#provider#help_tags# = s:help_tags$/;"	v
 g:clap#provider#history#	autoload/clap/provider/history.vim	/^let g:clap#provider#history# = s:history$/;"	v
 g:clap#provider#jumps#	autoload/clap/provider/jumps.vim	/^let g:clap#provider#jumps# = s:jumps$/;"	v
+g:clap#provider#leetcode#	autoload/clap/provider/leetcode.vim	/^let g:clap#provider#leetcode# = s:leetcode$/;"	v
 g:clap#provider#lines#	autoload/clap/provider/lines.vim	/^let g:clap#provider#lines# = s:lines$/;"	v
 g:clap#provider#loclist#	autoload/clap/provider/loclist.vim	/^let g:clap#provider#loclist# = s:loclist$/;"	v
 g:clap#provider#maps#	autoload/clap/provider/maps.vim	/^let g:clap#provider#maps# = s:maps$/;"	v
@@ -7794,6 +7798,7 @@ g:clap_search_box_border_style	autoload/clap.vim	/^let g:clap_search_box_border_
 g:clap_search_box_border_symbols	autoload/clap.vim	/^let g:clap_search_box_border_symbols = extend(s:default_symbols, get(g:, 'clap_search_box_border/;"	v
 g:clap_spinner_winid	autoload/clap/popup.vim	/^    let g:clap_spinner_winid = s:spinner_winid$/;"	v
 g:loaded_clap	plugin/clap.vim	/^let g:loaded_clap = 1$/;"	v
+g:test	autoload/clap/provider/leetcode.vim	/^  let g:test = b$/;"	v
 gemfile	crates/icon/exactmatch_map.json	/^  "gemfile": "\\ue791",$/;"	s
 generate_source	crates/maple_cli/src/cmd/filter.rs	/^    fn generate_source<I: Iterator<Item = String>>(&self) -> Source<I> {$/;"	P	implementation:Filter
 get	crates/matcher/extracted_fzy/src/lib.rs	/^    fn get(&self, col: usize, row: usize) -> Score {$/;"	P	implementation:Matrix
@@ -11144,6 +11149,9 @@ s:jumps.source	autoload/clap/provider/jumps.vim	/^function! s:jumps.source() abo
 s:last_signed_id	autoload/clap/sign.vim	/^let s:last_signed_id = -1$/;"	v
 s:layout_keys	autoload/clap/layout.vim	/^let s:layout_keys = ['width', 'height', 'row', 'col', 'relative']$/;"	v
 s:lazy_load_size	autoload/clap/navigation.vim	/^let s:lazy_load_size = 50$/;"	v
+s:leetcode	autoload/clap/provider/leetcode.vim	/^let s:leetcode = {}$/;"	v
+s:leetcode.sink	autoload/clap/provider/leetcode.vim	/^function! s:leetcode.sink(line) abort$/;"	f
+s:leetcode.source	autoload/clap/provider/leetcode.vim	/^function! s:leetcode.source() abort$/;"	f
 s:left_pad	autoload/clap/provider/command.vim	/^function! s:left_pad(s, n) abort$/;"	f
 s:len_groups	syntax/clap_tags.vim	/^  let s:len_groups = len(s:groups)$/;"	v
 s:line_splitter	autoload/clap/filter.vim	/^  function! s:line_splitter() abort$/;"	f
@@ -11475,6 +11483,7 @@ s:save_cpo	autoload/clap/provider/grep2.vim	/^let s:save_cpo = &cpoptions$/;"	v
 s:save_cpo	autoload/clap/provider/help_tags.vim	/^let s:save_cpo = &cpoptions$/;"	v
 s:save_cpo	autoload/clap/provider/history.vim	/^let s:save_cpo = &cpoptions$/;"	v
 s:save_cpo	autoload/clap/provider/jumps.vim	/^let s:save_cpo = &cpoptions$/;"	v
+s:save_cpo	autoload/clap/provider/leetcode.vim	/^let s:save_cpo = &cpoptions$/;"	v
 s:save_cpo	autoload/clap/provider/lines.vim	/^let s:save_cpo = &cpoptions$/;"	v
 s:save_cpo	autoload/clap/provider/loclist.vim	/^let s:save_cpo = &cpoptions$/;"	v
 s:save_cpo	autoload/clap/provider/maps.vim	/^let s:save_cpo = &cpoptions$/;"	v
