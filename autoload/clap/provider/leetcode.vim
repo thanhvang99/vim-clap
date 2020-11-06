@@ -6,13 +6,24 @@ set cpoptions&vim
 
 let s:leetcode = {}
 
-function! clap#provider#leetcode#source_common(buffer_local) abort
-  let source = "leetcode list"
-  return source
+function! clap#provider#leetcode#source_common(query) abort
+  let dict = {"easy": "e","medium": "m","hard": "h"}
+  if empty(a:query)
+    let source = "leetcode list" 
+    return source
+  else
+    let source = "leetcode list -q " . dict[a:query]
+    return source
+  endif
 endfunction
 
 function! s:leetcode.source() abort
-  return clap#provider#leetcode#source_common(v:false)
+  if has_key(g:clap.context,'opt')
+    let query = g:clap.context.opt
+    return clap#provider#leetcode#source_common(query)
+  else
+    return clap#provider#leetcode#source_common("")
+  endif
 endfunction
 
 function! clap#provider#leetcode#parse_rev(line) abort

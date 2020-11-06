@@ -5987,7 +5987,7 @@ clap#provider#gist#source_common	autoload/clap/provider/gist.vim	/^function! cla
 clap#provider#grep#inject_icon_appended	autoload/clap/provider/grep.vim	/^function! clap#provider#grep#inject_icon_appended(appended) abort$/;"	f
 clap#provider#leetcode#parse_rev	autoload/clap/provider/leetcode.vim	/^function! clap#provider#leetcode#parse_rev(line) abort$/;"	f
 clap#provider#leetcode#sink_inner	autoload/clap/provider/leetcode.vim	/^function! clap#provider#leetcode#sink_inner(bang_cmd) abort$/;"	f
-clap#provider#leetcode#source_common	autoload/clap/provider/leetcode.vim	/^function! clap#provider#leetcode#source_common(buffer_local) abort$/;"	f
+clap#provider#leetcode#source_common	autoload/clap/provider/leetcode.vim	/^function! clap#provider#leetcode#source_common(query) abort$/;"	f
 clap#provider#marks#preview_impl	autoload/clap/provider/marks.vim	/^function! clap#provider#marks#preview_impl(line, col, file_text) abort$/;"	f
 clap#provider#proj_tags#support_json_format	autoload/clap/provider/proj_tags.vim	/^function! clap#provider#proj_tags#support_json_format() abort$/;"	f
 clap#provider#quickfix#extract_position	autoload/clap/provider/quickfix.vim	/^function! clap#provider#quickfix#extract_position(selected) abort$/;"	f
