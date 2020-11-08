@@ -54,6 +54,9 @@ function! clap#provider#leetcode#sink_inner(bang_cmd) abort
 
   setlocal modifiable
   silent execute 'read' escape(a:bang_cmd, '%')
+  g/^\s*$/normal! dd/g
+  g/Warning/normal! dd/g
+  g/node --trace-warnings/normal! dd/g
   normal! gg"_dd
   setfiletype diff
   setlocal nomodifiable
@@ -65,12 +68,17 @@ function! s:leetcode.sink(line) abort
   let file =  substitute(l:id,'\s\+',"","g") . '.' . l:title . ".js"
   let path_to_file = l:root_path . l:file
   " let g:name = l:path_to_file
+  exe "lcd " . root_path
   if !empty(glob(l:path_to_file))
     " let g:test = "existed"
     silent! exe "e " . l:path_to_file
+    nnoremap <buffer> <del>6 :call quickui#menu#open('leetcode','normal')<cr>
+    call clap#provider#leetcode#sink_inner('!leetcode show '.id)
   else
-      silent! exe '!leetcode show ' . l:id ' -gx -l javascript -o ~/work_space/problems/leetcode/'
+      silent! exe '!leetcode show ' . l:id ' -g -l javascript -o ~/work_space/problems/leetcode/'
       silent! exe "e " . l:path_to_file
+      nnoremap <buffer> <del>6 :call quickui#menu#open('leetcode','normal')<cr>
+      call clap#provider#leetcode#sink_inner('!leetcode show '.id)
   endif
 endfunction
 
