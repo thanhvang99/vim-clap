@@ -72,7 +72,7 @@ function! s:leetcode.sink(line) abort
   if !empty(glob(l:path_to_file))
     " let g:test = "existed"
     silent! exe "e " . l:path_to_file
-    nnoremap <buffer> <del>6 :call quickui#menu#open('leetcode','normal')<cr>
+    " nnoremap <buffer> <del>6 :call quickui#menu#open('leetcode','normal')<cr>
     call clap#provider#leetcode#sink_inner('!leetcode show '.id)
   else
       silent! exe '!leetcode show ' . l:id ' -g -l javascript -o ~/work_space/problems/leetcode/'

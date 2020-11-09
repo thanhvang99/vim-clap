@@ -345,6 +345,7 @@ function! s:create_preview_win(height) abort
   " call setwinvar(s:preview_winid, '&winblend', 15)
 
   call setbufvar(s:preview_bufnr, '&signcolumn', 'no')
+  call setbufvar(s:preview_bufnr, '&foldlevel', 100)
 
   let g:clap#floating_win#preview.winid = s:preview_winid
   let g:clap#floating_win#preview.bufnr = s:preview_bufnr

@@ -4002,7 +4002,6 @@
 <Up>	ftplugin/clap_input.vim	/^inoremap <silent> <buffer> <Up>   <C-R>=clap#navigation#linewise('up')<CR>$/;"	m
 <Up>	ftplugin/clap_input.vim	/^nnoremap <silent> <buffer> <Up>   :<c-u>call clap#navigation#linewise('up')<CR>$/;"	m
 <del>6	autoload/clap/provider/leetcode.vim	/^      nnoremap <buffer> <del>6 :call quickui#menu#open('leetcode','normal')<cr>$/;"	m
-<del>6	autoload/clap/provider/leetcode.vim	/^    nnoremap <buffer> <del>6 :call quickui#menu#open('leetcode','normal')<cr>$/;"	m
 APP	install.ps1	/^$APP = 'maple'$/;"	v
 Added	CHANGELOG.md	/^### Added$/;"	S	section:CHANGELOG""[0.10] 2020-04-04
 Added	CHANGELOG.md	/^### Added$/;"	S	section:CHANGELOG""[0.11] 2020-04-09
