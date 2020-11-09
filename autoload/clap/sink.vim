@@ -17,7 +17,7 @@ function! clap#sink#open_file(fpath, lnum, col) abort
   normal! m'
   call clap#sink#edit_with_open_action(a:fpath)
   noautocmd call cursor(a:lnum, a:col)
-  normal! zz
+  silent! normal! zOzz
 endfunction
 
 let &cpoptions = s:save_cpo

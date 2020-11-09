@@ -7,7 +7,7 @@ set cpoptions&vim
 let s:gist = {}
 
 function! clap#provider#gist#source_common(buffer_local) abort
-  let source = "gist '--list'"
+  let source = "gist -l " . g:github_user
   return source
 endfunction
 
@@ -25,6 +25,7 @@ endfunction
 
 function! s:gist.sink(line) abort
   let rev = clap#provider#gist#parse_rev(a:line)
+  vertical belowright new
   exe "Gist " . rev
 endfunction
 
