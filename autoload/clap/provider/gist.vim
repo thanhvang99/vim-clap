@@ -25,7 +25,6 @@ endfunction
 
 function! s:gist.sink(line) abort
   let rev = clap#provider#gist#parse_rev(a:line)
-  vertical belowright new
   exe "Gist " . rev
 endfunction
 
