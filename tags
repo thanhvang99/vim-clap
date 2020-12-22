@@ -5990,6 +5990,8 @@ clap#provider#leetcode#parse	autoload/clap/provider/leetcode.vim	/^function! cla
 clap#provider#leetcode#sink_inner	autoload/clap/provider/leetcode.vim	/^function! clap#provider#leetcode#sink_inner(bang_cmd) abort$/;"	f
 clap#provider#leetcode#source_common	autoload/clap/provider/leetcode.vim	/^function! clap#provider#leetcode#source_common(query) abort$/;"	f
 clap#provider#marks#preview_impl	autoload/clap/provider/marks.vim	/^function! clap#provider#marks#preview_impl(line, col, file_text) abort$/;"	f
+clap#provider#preview#parse_rev	autoload/clap/provider/preview.vim	/^function! clap#provider#preview#parse_rev(line) abort$/;"	f
+clap#provider#preview#source_common	autoload/clap/provider/preview.vim	/^function! clap#provider#preview#source_common(buffer_local) abort$/;"	f
 clap#provider#proj_tags#support_json_format	autoload/clap/provider/proj_tags.vim	/^function! clap#provider#proj_tags#support_json_format() abort$/;"	f
 clap#provider#quickfix#extract_position	autoload/clap/provider/quickfix.vim	/^function! clap#provider#quickfix#extract_position(selected) abort$/;"	f
 clap#provider#quickfix#into_qf_line	autoload/clap/provider/quickfix.vim	/^function! clap#provider#quickfix#into_qf_line(qf_entry) abort$/;"	f
@@ -7757,6 +7759,7 @@ g:clap#provider#lines#	autoload/clap/provider/lines.vim	/^let g:clap#provider#li
 g:clap#provider#loclist#	autoload/clap/provider/loclist.vim	/^let g:clap#provider#loclist# = s:loclist$/;"	v
 g:clap#provider#maps#	autoload/clap/provider/maps.vim	/^let g:clap#provider#maps# = s:maps$/;"	v
 g:clap#provider#marks#	autoload/clap/provider/marks.vim	/^let g:clap#provider#marks# = s:marks$/;"	v
+g:clap#provider#preview#	autoload/clap/provider/preview.vim	/^let g:clap#provider#preview# = s:preview$/;"	v
 g:clap#provider#proj_tags#	autoload/clap/provider/proj_tags.vim	/^let g:clap#provider#proj_tags# = s:proj_tags$/;"	v
 g:clap#provider#providers#	autoload/clap/provider/providers.vim	/^let g:clap#provider#providers# = s:providers$/;"	v
 g:clap#provider#quickfix#	autoload/clap/provider/quickfix.vim	/^let g:clap#provider#quickfix# = s:quickfix$/;"	v
@@ -9966,6 +9969,7 @@ pyd	crates/icon/extension_map.json	/^  "pyd": "\\ue606",$/;"	s
 pyo	crates/icon/extension_map.json	/^  "pyo": "\\ue606",$/;"	s
 python-dynamic-module	Makefile	/^python-dynamic-module:$/;"	t
 python_root_dir	setup_python.py	/^python_root_dir = normpath(join(plugin_root_dir, '..', 'pythonx'))$/;"	v
+q	autoload/clap/provider/preview.vim	/^  nnoremap <buffer> q :call LoadPreviousBranch()<cr>$/;"	m
 q	ftplugin/clap_input.vim	/^cnoremap <silent> <buffer> q :<c-u>call clap#handler#exit()<CR>:echo<CR>$/;"	m
 query	crates/maple_cli/src/cmd/blines.rs	/^    query: String,$/;"	m	struct:Blines
 query	crates/maple_cli/src/cmd/filter.rs	/^    query: String,$/;"	m	struct:Filter
@@ -10784,6 +10788,7 @@ s:bcommits.on_move_async	autoload/clap/provider/bcommits.vim	/^function! s:bcomm
 s:bcommits.sink	autoload/clap/provider/bcommits.vim	/^function! s:bcommits.sink(line) abort$/;"	f
 s:bcommits.source	autoload/clap/provider/bcommits.vim	/^function! s:bcommits.source() abort$/;"	f
 s:begin	autoload/clap/provider/commits.vim	/^let s:begin = '^[^0-9]*[0-9]\\{4}-[0-9]\\{2}-[0-9]\\{2}\\s\\+'$/;"	v
+s:begin	autoload/clap/provider/preview.vim	/^let s:begin = '^[^0-9]*[0-9]\\{4}-[0-9]\\{2}-[0-9]\\{2}\\s\\+'$/;"	v
 s:bg0	autoload/clap/themes/atom_dark.vim	/^let s:bg0 = { 'ctermbg': '59', 'guibg': '#403d3d' }$/;"	v
 s:bg0	autoload/clap/themes/material_design_dark.vim	/^let s:bg0 = { 'ctermbg': '60', 'guibg': '#3e4461' }$/;"	v
 s:bg0	autoload/clap/themes/solarized_dark.vim	/^let s:bg0 = {$/;"	v
@@ -11370,6 +11375,9 @@ s:post_check	autoload/clap/dispatcher.vim	/^  function! s:post_check() abort$/;"
 s:prebuilt_maple_binary	autoload/clap/installer.vim	/^  let s:prebuilt_maple_binary = s:plugin_root_dir.'\/bin\/maple'$/;"	v
 s:prebuilt_maple_binary	autoload/clap/installer.vim	/^  let s:prebuilt_maple_binary = s:plugin_root_dir.'\\bin\\maple.exe'$/;"	v
 s:prepare_job_start	autoload/clap/dispatcher.vim	/^function! s:prepare_job_start(cmd) abort$/;"	f
+s:preview	autoload/clap/provider/preview.vim	/^let s:preview = {}$/;"	v
+s:preview.sink	autoload/clap/provider/preview.vim	/^function! s:preview.sink(line) abort$/;"	f
+s:preview.source	autoload/clap/provider/preview.vim	/^function! s:preview.source() abort$/;"	f
 s:preview_bufnr	autoload/clap/floating_win.vim	/^let s:preview_bufnr = nvim_create_buf(v:false, v:true)$/;"	v
 s:preview_default_hi_group	autoload/clap/themes.vim	/^let s:preview_default_hi_group = 'PmenuSel'$/;"	v
 s:preview_winhl	autoload/clap/floating_win.vim	/^let s:preview_winhl = 'Normal:ClapPreview,EndOfBuffer:ClapPreviewInvisibleEndOfBuffer,SignColumn/;"	v
@@ -11488,6 +11496,7 @@ s:save_cpo	autoload/clap/provider/lines.vim	/^let s:save_cpo = &cpoptions$/;"	v
 s:save_cpo	autoload/clap/provider/loclist.vim	/^let s:save_cpo = &cpoptions$/;"	v
 s:save_cpo	autoload/clap/provider/maps.vim	/^let s:save_cpo = &cpoptions$/;"	v
 s:save_cpo	autoload/clap/provider/marks.vim	/^let s:save_cpo = &cpoptions$/;"	v
+s:save_cpo	autoload/clap/provider/preview.vim	/^let s:save_cpo = &cpoptions$/;"	v
 s:save_cpo	autoload/clap/provider/proj_tags.vim	/^let s:save_cpo = &cpoptions$/;"	v
 s:save_cpo	autoload/clap/provider/providers.vim	/^let s:save_cpo = &cpoptions$/;"	v
 s:save_cpo	autoload/clap/provider/quickfix.vim	/^let s:save_cpo = &cpoptions$/;"	v

@@ -64,6 +64,7 @@ function! s:tags.on_exit() abort
 endfunction
 
 function! s:tags.sink(selected) abort
+  normal! m'
   call vista#finder#fzf#sink(a:selected, g:clap.start.winid)
 endfunction
 
