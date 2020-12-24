@@ -7802,6 +7802,7 @@ g:clap_search_box_border_style	autoload/clap.vim	/^let g:clap_search_box_border_
 g:clap_search_box_border_symbols	autoload/clap.vim	/^let g:clap_search_box_border_symbols = extend(s:default_symbols, get(g:, 'clap_search_box_border/;"	v
 g:clap_spinner_winid	autoload/clap/popup.vim	/^    let g:clap_spinner_winid = s:spinner_winid$/;"	v
 g:loaded_clap	plugin/clap.vim	/^let g:loaded_clap = 1$/;"	v
+g:output_save	autoload/clap/provider/preview.vim	/^let g:output_save=""$/;"	v
 gemfile	crates/icon/exactmatch_map.json	/^  "gemfile": "\\ue791",$/;"	s
 generate_source	crates/maple_cli/src/cmd/filter.rs	/^    fn generate_source<I: Iterator<Item = String>>(&self) -> Source<I> {$/;"	P	implementation:Filter
 get	crates/matcher/extracted_fzy/src/lib.rs	/^    fn get(&self, col: usize, row: usize) -> Score {$/;"	P	implementation:Matrix

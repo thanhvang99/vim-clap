@@ -8,16 +8,14 @@ set cpoptions&vim
 let s:leetcode = {}
 
 function! clap#provider#leetcode#source_common(query) abort
-  " let dict = {"easy": "e","medium": "m","hard": "h"}
-  let source = "leetcode list | sed -E -e 's/(Medium|Easy|Hard).*//g'"
-  return source
-  " if empty(a:query)
-  "   " let source = "leetcode list" 
-  "   return source
-  " else
-  "   let source = "leetcode list -q " . dict[a:query]
-  "   return source
-  " endif
+  let dict = {"easy": "e","medium": "m","hard": "h"}
+  if empty(a:query)
+    let source = "leetcode list" 
+    return source
+  else
+    let source = "leetcode list -q " . dict[a:query]
+    return source
+  endif
 endfunction
 
 function! s:leetcode.source() abort
@@ -56,15 +54,12 @@ function! clap#provider#leetcode#sink_inner(bang_cmd) abort
 
   setlocal modifiable
   silent execute 'read' escape(a:bang_cmd, '%')
-  silent! g/^\s*$/normal! dd/g
-  silent! g/Warning/normal! dd/g
-  silent! g/node --trace-warnings/normal! dd/g
-  silent! g/^\r$/normal! dd/g
-  silent! %s/\r//g
-  exe ":3,6d"
+  g/^\s*$/normal! dd/g
+  g/Warning/normal! dd/g
+  g/node --trace-warnings/normal! dd/g
   normal! gg"_dd
   setfiletype diff
-  " setlocal nomodifiable
+  setlocal nomodifiable
 endfunction
 
 function! s:leetcode.sink(line) abort

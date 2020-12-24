@@ -42,11 +42,20 @@ function! clap#provider#preview#parse_rev(line) abort
 endfunction
 
 
+let g:output_save=""
 function! s:preview.sink(line) abort
   let rev = clap#provider#preview#parse_rev(a:line)
-  exe "silent! Git stash save"
-  exe "silent! Git checkout " . rev
-  exe "silent! edit"
+  redir => g:output_save
+  silent execute "!git diff"
+  redir END
+  " Different between matchstr vs match ??
+  if !empty(matchstr(g:output_save,"diff --"))
+    exe "silent! Git stash save -u"
+    exe "silent! Git checkout " . rev
+    exe "silent! edit"
+  else
+    exe "silent! Git checkout " . rev
+  endif
   nnoremap <buffer> q :call LoadPreviousBranch()<cr>
 endfunction
 
